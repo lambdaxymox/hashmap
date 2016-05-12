@@ -1,0 +1,11 @@
+[package]
+name = "hashmap"
+version = "0.2.0"
+authors = ["Stallmanifold <stallmanifold@gmail.com>"]
+
+[lib]
+
+name = "util"
+path = "src/lib.rs"
+
+[dependencies]
