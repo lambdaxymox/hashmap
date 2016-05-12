@@ -50,4 +50,44 @@ macro_rules! hash_map(
         }
     };
 
+    ( )  => {
+        {
+            use std::collections::HashMap;
+
+            HashMap::new()
+        }
+    };
+
+    ({ })  => {
+        {
+            use std::collections::HashMap;
+
+            HashMap::new()
+        }
+    };
+
+    ({ $ ( $key : expr => $value : expr ) , + }) => {
+        {
+            use std::collections::HashMap;
+
+            let mut m = HashMap::new();
+            $(
+                m.insert($key, $value);
+            )+
+            m
+        }
+    };
+
+    ({ $ ( $key : expr => $value : expr , ) + }) => {
+        {
+            use std::collections::HashMap;
+
+            let mut m = HashMap::new();
+            $(
+                m.insert($key, $value);
+            )+
+            m
+        }
+    };
+
 );
