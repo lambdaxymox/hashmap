@@ -1,3 +1,5 @@
+#![crate_name="hashmap"]
+
 #[macro_use]
 pub mod macros;
 

@@ -1,23 +1,20 @@
-/// Helper macros that don't belong in any particular package.
-
-
-/** 
-This macro makes it easier to generating hash tables directly.
-
-Example:
-...
-# #[macro_use] extern crate util;
-# fn main() {
-#     let table = hash_map!({ 1 => "One", 2 => "Two", 3 => "Three"});
-#
-#     println!("{} => {:?}", 1, table.get(&1));
-#     println!("{} => {:?}", 2, table.get(&2));
-#     println!("{} => {:?}", 3, table.get(&3));
-# }
-...
-*/
+/// This macro generates HashMaps directly.
+///
+/// # Examples
+///
+///```rust
+/// #[macro_use] extern crate hashmap;
+///
+/// fn main() {
+///     let table = hashmap!(1 => "One", 2 => "Two", 3 => "Three");
+///
+///      println!("{} => {:?}", 1, table.get(&1));
+///      println!("{} => {:?}", 2, table.get(&2));
+///      println!("{} => {:?}", 3, table.get(&3));
+/// }
+///```
 #[macro_export]
-macro_rules! hash_map(
+macro_rules! hashmap(
     { } => {
         {
             use std::collections::HashMap;
